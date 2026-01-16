@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsr75pdjy57fx"]
+
+[ext_resource type="Script" uid="uid://nc2lwwjistrq" path="res://Assets/Scripts/CommonScripts/CommonData.cs" id="1_2g1ed"]
+[ext_resource type="AudioStream" uid="uid://dq1cnjtb2whma" path="res://Assets/Audio/Music/Level1.mp3" id="2_rv15i"]
+
+[node name="CommonData" type="Node"]
+script = ExtResource("1_2g1ed")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rv15i")

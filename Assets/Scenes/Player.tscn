@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dr8qdk10uy0o4"]
+
+[ext_resource type="Texture2D" path="res://Assets/Sprites/PlayerWalk.png" id="1_3e2tf"]
+[ext_resource type="Script" uid="uid://batcpr6rxhyb2" path="res://Assets/Scripts/PlayerScripts/PlayerMover.cs" id="1_b2ifw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2ifw"]
+size = Vector2(12, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2ifw"]
+atlas = ExtResource("1_3e2tf")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aee6e"]
+atlas = ExtResource("1_3e2tf")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5q2x"]
+atlas = ExtResource("1_3e2tf")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mifcl"]
+atlas = ExtResource("1_3e2tf")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2thea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2ifw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aee6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5q2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mifcl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ccr5"]
+size = Vector2(12, 28)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_b2ifw")
+
+[node name="AreaDetector" type="Area2D" parent="."]
+collision_mask = 60
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetector"]
+position = Vector2(-1, -14)
+shape = SubResource("RectangleShape2D_b2ifw")
+
+[node name="WalkingAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_2thea")
+frame_progress = 0.24983363
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -14)
+shape = SubResource("RectangleShape2D_0ccr5")

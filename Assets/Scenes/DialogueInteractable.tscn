@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0uyeoheppepk"]
+
+[ext_resource type="Script" uid="uid://cl8sq2b2lp4a5" path="res://Assets/Scripts/LevelScripts/LevelDialogueInitiator.cs" id="1_atu2j"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/InteractionIndicator-sheet.png" id="2_txs58"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqsam"]
+atlas = ExtResource("2_txs58")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32yid"]
+atlas = ExtResource("2_txs58")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlnxx"]
+atlas = ExtResource("2_txs58")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otjle"]
+atlas = ExtResource("2_txs58")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tegj5"]
+atlas = ExtResource("2_txs58")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yy124"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqsam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32yid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlnxx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otjle")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tegj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="DialogueInteractable" type="Sprite2D"]
+script = ExtResource("1_atu2j")
+metadata/Dialogue = PackedStringArray("Sign|DialogueIconSign|This is a test.")
+
+[node name="InteractionIndicator" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yy124")
+autoplay = "default"
+frame = 3
+frame_progress = 0.5094823

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpopl1smrtneb"]
+
+[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/DialogueBG.png" id="1_cdjwm"]
+[ext_resource type="Script" uid="uid://b7a4ty2lbfxan" path="res://Assets/Scripts/LevelScripts/Dialogue.cs" id="1_qqmmm"]
+[ext_resource type="Texture2D" path="res://Assets/Sprites/DialogueIcons/DialogueIconSign.png" id="2_jtluh"]
+[ext_resource type="FontFile" path="res://Assets/MedodicaRegular.otf" id="3_qqmmm"]
+
+[node name="Dialogue" type="Node2D"]
+z_index = 10
+script = ExtResource("1_qqmmm")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(0, 50)
+texture = ExtResource("1_cdjwm")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-72, 50)
+texture = ExtResource("2_jtluh")
+
+[node name="SpeakerName" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -42.0
+offset_top = 21.0
+offset_right = 100.0
+offset_bottom = 35.253662
+scale = Vector2(1.0795577, 1.0795577)
+theme_override_fonts/normal_font = ExtResource("3_qqmmm")
+text = "SpeakerName"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Dialogue" type="RichTextLabel" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = -41.000004
+offset_top = 40.0
+offset_right = 99.901855
+offset_bottom = 75.974945
+scale = Vector2(1.0006965, 1.0006965)
+theme_override_fonts/normal_font = ExtResource("3_qqmmm")
+text = "If you are seeing this then the game is broken and you should report it. Thanks!"
+scroll_active = false
+scroll_following = true
+scroll_following_visible_characters = true

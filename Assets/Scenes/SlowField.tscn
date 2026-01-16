@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btgikedw0lg47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtorf"]
+
+[node name="SlowZone" type="Area2D"]
+collision_layer = 32
+linear_damp = 100.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xtorf")
