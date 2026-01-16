@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://c8bxl0uohy535"]
+[gd_scene load_steps=2 format=3 uid="uid://c8bxl0uohy535"]
+
+[ext_resource type="Texture2D" uid="uid://hqp23lmk336m" path="res://icon.svg" id="1_rmvno"]
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="Delete" type="Sprite2D" parent="."]
+rotation = 0.7296006
+texture = ExtResource("1_rmvno")
