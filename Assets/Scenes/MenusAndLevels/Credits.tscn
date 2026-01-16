@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvjmefswaveya"]
+[gd_scene load_steps=3 format=3 uid="uid://bvjmefswaveya"]
 
 [ext_resource type="Script" uid="uid://b02hgywj3kck" path="res://Assets/Scripts/CommonScripts/UISelector.cs" id="2_66bl7"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/BackPie.png" id="3_66bl7"]
 [ext_resource type="Script" uid="uid://b28bv2l2asbpy" path="res://Assets/Scripts/LevelScripts/ChangeMenuInitiator.cs" id="4_gp05m"]
-[ext_resource type="Texture2D" path="res://Assets/Sprites/UI/SelectionIndicator.png" id="5_m3qr0"]
-[ext_resource type="FontFile" path="res://Assets/MedodicaRegular.otf" id="6_66bl7"]
 
 [node name="Htp" type="Node2D"]
 
@@ -14,22 +11,20 @@ script = ExtResource("2_66bl7")
 [node name="BackButton" type="Sprite2D" parent="UISelector"]
 z_index = 1
 position = Vector2(0, 65)
-texture = ExtResource("3_66bl7")
 script = ExtResource("4_gp05m")
 metadata/TargetMenu = "MainMenu"
 metadata/TransitionType = "FAST"
 
 [node name="SelectionIndicator" type="Sprite2D" parent="UISelector"]
 z_index = 1
-texture = ExtResource("5_m3qr0")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = -154.0
 offset_top = -84.0
 offset_right = 154.0
 offset_bottom = 52.0
-theme_override_fonts/normal_font = ExtResource("6_66bl7")
-text = "Created by Jojackman1"
+text = "Created by ...
+"
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk1egdpjl31r"]
+
+[ext_resource type="Script" uid="uid://bqqpex5a35ttm" path="res://Assets/Scripts/CommonScripts/LevelSelectionManager.cs" id="1_4n03f"]
+[ext_resource type="PackedScene" uid="uid://bffiqliomwkmo" path="res://Assets/Scenes/Persistant/Camera.tscn" id="1_j4u47"]
+[ext_resource type="Script" uid="uid://b02hgywj3kck" path="res://Assets/Scripts/CommonScripts/UISelector.cs" id="2_xaene"]
+[ext_resource type="Script" uid="uid://b28bv2l2asbpy" path="res://Assets/Scripts/LevelScripts/ChangeMenuInitiator.cs" id="4_xaene"]
+
+[node name="LevelSelectionMenu" type="Node2D"]
+script = ExtResource("1_4n03f")
+
+[node name="Camera" parent="." instance=ExtResource("1_j4u47")]
+
+[node name="UISelector" type="Node2D" parent="."]
+script = ExtResource("2_xaene")
+
+[node name="Level1" type="Sprite2D" parent="UISelector"]
+position = Vector2(-79, -40)
+script = ExtResource("4_xaene")
+metadata/TargetMenu = "Level1"
+metadata/TransitionType = "SLOW"
+
+[node name="Level2" type="Sprite2D" parent="UISelector"]
+visible = false
+position = Vector2(0, -40)
+script = ExtResource("4_xaene")
+metadata/TargetMenu = "Level2"
+metadata/TransitionType = "SLOW"
+
+[node name="Level3" type="Sprite2D" parent="UISelector"]
+visible = false
+position = Vector2(80, -40)
+script = ExtResource("4_xaene")
+metadata/TargetMenu = "Level3"
+metadata/TransitionType = "SLOW"
+
+[node name="Level4" type="Sprite2D" parent="UISelector"]
+visible = false
+position = Vector2(-40, 40)
+script = ExtResource("4_xaene")
+metadata/TargetMenu = "Level4"
+metadata/TransitionType = "SLOW"
+
+[node name="Level5" type="Sprite2D" parent="UISelector"]
+visible = false
+position = Vector2(40, 40)
+script = ExtResource("4_xaene")
+metadata/TargetMenu = "Level5"
+metadata/TransitionType = "SLOW"
+
+[node name="BackButton" type="Sprite2D" parent="UISelector"]
+position = Vector2(127, 65)
+script = ExtResource("4_xaene")
+metadata/TargetMenu = "MainMenu"
+metadata/TransitionType = "FAST"
+
+[node name="SelectionIndicator" type="Sprite2D" parent="UISelector"]
+z_index = 1
+
+[node name="FakeButtons" type="Node2D" parent="."]
+
+[node name="Level2" type="Sprite2D" parent="FakeButtons"]
+position = Vector2(0, -40)
+
+[node name="LockIcon" type="Sprite2D" parent="FakeButtons/Level2"]
+self_modulate = Color(1, 1, 1, 0.47058824)
+
+[node name="Level3" type="Sprite2D" parent="FakeButtons"]
+position = Vector2(80, -40)
+
+[node name="LockIcon" type="Sprite2D" parent="FakeButtons/Level3"]
+self_modulate = Color(1, 1, 1, 0.47058824)
+
+[node name="Level4" type="Sprite2D" parent="FakeButtons"]
+position = Vector2(-40, 40)
+
+[node name="LockIcon" type="Sprite2D" parent="FakeButtons/Level4"]
+self_modulate = Color(1, 1, 1, 0.47058824)
+
+[node name="Level5" type="Sprite2D" parent="FakeButtons"]
+position = Vector2(40, 40)
+
+[node name="LockIcon" type="Sprite2D" parent="FakeButtons/Level5"]
+self_modulate = Color(1, 1, 1, 0.47058824)
